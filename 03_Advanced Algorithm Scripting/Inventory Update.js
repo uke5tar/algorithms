@@ -1,3 +1,9 @@
+/*
+    Compare and update inventory stored in a 2d array against a second 2d array of a fresh delivery.
+    Update current inventory item quantity, and if an item cannot be found,
+    add the new item and quantity into the inventory array in alphabetical order.
+*/
+
 function updateInventory(arr1, arr2) {
     // sort array alphabetically by second column name
     function compareSecondColumn(arr) {
@@ -14,10 +20,10 @@ function updateInventory(arr1, arr2) {
                     arr1[j][0] += arr2[i][0];
                     arr2.splice(i, 1);
                 }
-            } 
+            }
         }
         // concat what is left behind, sort it and return it
-        return compareSecondColumn(arr1.concat(arr2));    
+        return compareSecondColumn(arr1.concat(arr2));
     } else if (arr1.length === 0) {
         return compareSecondColumn(arr2); // return arr2 sorted if arr1 is empty
     } else {
